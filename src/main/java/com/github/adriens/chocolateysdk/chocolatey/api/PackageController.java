@@ -30,7 +30,7 @@ public class PackageController {
     @RequestMapping("/")
     public String welcome(){
         String out;
-        out = "Main endpoint is : /package";
+        out = "Main endpoint is : /{package}";
         return out;
     }
     
