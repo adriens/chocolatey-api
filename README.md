@@ -10,3 +10,8 @@ Just :
 ```
 /{package}
 ```
+
+# Demo
+
+![Dummy demo screenshot](DEMO.png "Dummy demo screenshot")
+
