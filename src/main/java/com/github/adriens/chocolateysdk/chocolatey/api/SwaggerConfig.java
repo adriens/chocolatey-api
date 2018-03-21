@@ -27,11 +27,11 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.github.adriens.chocolateysdk.chocolatey.api")) 
-                .paths(PathSelectors.regex("/*"))
+                .paths(PathSelectors.regex("/.*"))
                 .build();
              
     }
-    
+    /*
     @Override
     protected void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("swagger-ui.html")
@@ -40,4 +40,5 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
         registry.addResourceHandler("/webjars/**")
                 .addResourceLocations("classpath:/META-INF/resources/webjars/");
     }
+*/
 }
