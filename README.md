@@ -13,12 +13,13 @@ Get all metadats about a package (Chocolatey Webpage AND
 ```
 /{package}
 /packages/{package}
+/packages/{package}/latest
+/packages/{package}/{version}
 ```
 
 To only get the `nuspec` datas from a given version (not necessarly the latest) :
 
 ```
-/packages/{package}/nuspec
 /packages/{package}/latest/nuspec
 /packages/{package}/{version}/nuspec
 ```
