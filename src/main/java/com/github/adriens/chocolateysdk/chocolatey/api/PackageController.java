@@ -5,8 +5,9 @@
  */
 package com.github.adriens.chocolateysdk.chocolatey.api;
 
+import com.github.adriens.chocolateysdk.chocolatey.sdk.NuspecPackageMetaData;
+import com.github.adriens.chocolateysdk.chocolatey.sdk.NuspecParser;
 import com.github.adriens.chocolateysdk.chocolatey.sdk.PackageWrapper;
-import java.io.IOException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -40,4 +41,20 @@ public class PackageController {
     throws Exception {
         return new PackageWrapper(aPackage, true);
     }
+    
+    @RequestMapping(value = {"/packages/{package}/nuspec", "/packages/{package}/latest/nuspec"})
+    public NuspecPackageMetaData getPackageNuspec(
+            @PathVariable("package") String aPackage)
+    throws Exception {
+        return new PackageWrapper(aPackage, true).getNuspecPackageMetaData();
+    }
+    
+    @RequestMapping(value = {"/packages/{package}/{version}/nuspec"})
+    public NuspecPackageMetaData getPackageNuspecByVersion(
+            @PathVariable("package") String aPackage,
+            @PathVariable("version") String aVersion)
+    throws Exception {
+        return new NuspecParser(aPackage, aVersion).getNuspecPackageMetaData();
+    }
+    
 }

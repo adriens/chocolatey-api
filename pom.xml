@@ -5,7 +5,7 @@
 
     <groupId>com.github.adriens.chocolatey</groupId>
     <artifactId>chocolatey-api</artifactId>
-    <version>1.4_SNAPSHOT</version>
+    <version>1.4</version>
     <packaging>jar</packaging>
 
     <name>chocolatey-api</name>
