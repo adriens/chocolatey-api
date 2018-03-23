@@ -28,6 +28,7 @@ public class PackageController {
         java.util.logging.Logger.getLogger("org.apache.http").setLevel(java.util.logging.Level.OFF);
     }
     
+    // Dummy and dirty welcome
     @RequestMapping("/")
     public String welcome(){
         String out;
@@ -35,19 +36,28 @@ public class PackageController {
         return out;
     }
     
-    @RequestMapping(value = {"/{package}", "/packages/{package}"})
+    @RequestMapping(value = {"/{package}", "/packages/{package}", "/packages/{package}/latest"})
     public PackageWrapper getPackage(
             @PathVariable("package") String aPackage)
     throws Exception {
         return new PackageWrapper(aPackage, true);
     }
     
-    @RequestMapping(value = {"/packages/{package}/nuspec", "/packages/{package}/latest/nuspec"})
+    @RequestMapping(value = {"/packages/{package}/latest/nuspec"})
     public NuspecPackageMetaData getPackageNuspec(
             @PathVariable("package") String aPackage)
     throws Exception {
         return new PackageWrapper(aPackage, true).getNuspecPackageMetaData();
     }
+    
+    @RequestMapping(value = {"/packages/{package}/{version}"})
+    public PackageWrapper getPackageByVersion(
+            @PathVariable("package") String aPackage,
+            @PathVariable("version") String aVersion)
+    throws Exception {
+        return new PackageWrapper(aPackage, aVersion);
+    }
+    
     
     @RequestMapping(value = {"/packages/{package}/{version}/nuspec"})
     public NuspecPackageMetaData getPackageNuspecByVersion(
