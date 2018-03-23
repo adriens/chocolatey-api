@@ -34,10 +34,10 @@ public class PackageController {
         return out;
     }
     
-    @RequestMapping("/{package}")
+    @RequestMapping(value = {"/{package}", "/packages/{package}"})
     public PackageWrapper getPackage(
             @PathVariable("package") String aPackage)
-    throws IOException {
-        return new PackageWrapper(aPackage);
+    throws Exception {
+        return new PackageWrapper(aPackage, true);
     }
 }
