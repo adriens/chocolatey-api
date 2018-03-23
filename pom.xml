@@ -23,7 +23,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <chocolatey-sdk.version>1.3</chocolatey-sdk.version>
+        <chocolatey-sdk.version>1.4</chocolatey-sdk.version>
         <springfox-swagger.version>2.8.0</springfox-swagger.version>
     </properties>
 
